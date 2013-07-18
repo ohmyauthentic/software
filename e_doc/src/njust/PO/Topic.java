@@ -18,7 +18,7 @@ public class Topic implements java.io.Serializable {
 	private String topicName;
 	private String topicUrl;
 	private String wordDescription;
-	private Integer like;
+	private Integer love;
 	private Integer downloadNum;
 	private String type;
 	private String picUrl;
@@ -41,7 +41,7 @@ public class Topic implements java.io.Serializable {
 	/** full constructor */
 	public Topic(String topicId, User user, Timestamp publishTime,
 			String topicName, String topicUrl, String wordDescription,
-			Integer like, Integer downloadNum, String type, String picUrl,
+			Integer love, Integer downloadNum, String type, String picUrl,
 			Integer hate, Set comments, Set tags, Set privilegetopics) {
 		this.topicId = topicId;
 		this.user = user;
@@ -49,7 +49,7 @@ public class Topic implements java.io.Serializable {
 		this.topicName = topicName;
 		this.topicUrl = topicUrl;
 		this.wordDescription = wordDescription;
-		this.like = like;
+		this.love = love;
 		this.downloadNum = downloadNum;
 		this.type = type;
 		this.picUrl = picUrl;
@@ -109,12 +109,12 @@ public class Topic implements java.io.Serializable {
 		this.wordDescription = wordDescription;
 	}
 
-	public Integer getLike() {
-		return this.like;
+	public Integer getLove() {
+		return this.love;
 	}
 
-	public void setLike(Integer like) {
-		this.like = like;
+	public void setLove(Integer love) {
+		this.love = love;
 	}
 
 	public Integer getDownloadNum() {

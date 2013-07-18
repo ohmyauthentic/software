@@ -118,14 +118,14 @@
 			</div>
 
 
-			<form class="form-horizontal" role="form" id="mainform">
+			<form class="form-horizontal" role="form" id="mainform" action="Post.do" method="post">
 				<div class="form-group">
 					<label class="col-sm-2 control-label">
 						<span
-							style="font-weight: lighter; font-size: 18px; color: #434343">文件名</span>
+							style="font-weight: lighter; font-size: 18px; color: #434343">文件名12</span>
 					</label>
 					<div class="col-sm-3">
-						<input type="email" class="form-control" 
+						<input type="text" class="form-control" id="topic_name" name="topic_name"
 							placeholder="请规范描述">
 					</div>
 				</div>
@@ -136,26 +136,26 @@
 							style="font-weight: lighter; font-size: 18px; color: #434343">类型</span>
 					</label>
 					<div class="col-sm-3">
-						<select class="form-control">
+						<select class="form-control" id="type" name="type">
 							<option>
 								--请选择--
 							</option>
-							<option>
+							<option value="课件">
 								课件
 							</option>
-							<option>
+							<option value="电子书">
 								电子书
 							</option>
-							<option>
+							<option value="试卷">
 								试卷
 							</option>
-							<option>
+							<option value="课程设计">
 								课程设计
 							</option>
-							<option>
+							<option value="论文报告">
 								论文报告
 							</option>
-							<option>
+							<option value="电子教程">
 								电子教程
 							</option>
 						</select>
@@ -220,6 +220,8 @@
 							style="font-weight: lighter; font-size: 18px; color: #434343">详细描述</span>
 					</label>
 					<br />
+					
+					
                        <input type="hidden" name="content" id="hide"/>
 
 
@@ -383,7 +385,7 @@
 							style="font-weight: lighter; font-size: 18px; color: #434343">关键字</span>
 					</label>
 					<div class="col-sm-5">
-						<input type="text" class="form-control" id="inputEmail3"
+						<input type="text" class="form-control" id="inputEmail3" name="inputEmail3"
 							placeholder="选填。多个关键词间使用逗号间隔。">
 					</div>
 				</div>
@@ -393,8 +395,8 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label"></label>
 					<div class="col-sm-2">
-						<input class="btn btn-block btn-primary"
-							id="submit" value="提交">
+						<button class="btn btn-block btn-primary"
+							id="submitform" type="button">提交</button>
 					</div>
 				</div>
 		</div>
@@ -416,13 +418,17 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 
 		<script src="js/jquery.min.js"></script>	
+		
+		<script>
+		$("#submitform").click(function(){
+		$("#hide").val($("#editor").html());	
+		$("#mainform").submit();
+		});
+		
+		</script>
 	   <script type="text/javascript" src="js/jquery.js"></script>
 	   <script type="text/javascript" src="js/ajaxfileupload.js"></script>
-		<script>
-		$("#submit").click(function(){
-		$("#hide").val($("#editor").html());	
-		$("#mainform").submit();		
-		});
+		<script>	
 			
 		$("#fileuploadajax").click(function(){
 				if($("#uploadfile").val()==""){
@@ -430,7 +436,7 @@
 				return false;
 			}
 		   $.ajaxFileUpload({
-					url:"http://localhost:8080/e_doc/e_doc",
+					url:"http://localhost:8080/e_doc/FileLoad__",
 					secureuri:false,
 					fileElementId:'uploadfile',
 					dataType: 'text/xml',			
