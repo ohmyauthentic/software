@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <include file="struts-default.xml"></include>
+	<constant name="struts.i18n.encoding" value="GBK" /> 
+	<package name="main" extends="struts-default">	    
+		<action name="userregister" class="njust.UserAction.Register">
+		    <result name="error">/register.jsp</result>
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="UserList" class="njust.UserAction.UserlistAction">
+	         <result name="success">/user_mana_userlist.jsp</result>
+        </action>
+        <action name="userlogin" class="njust.UserAction.Login">
+		    <result name="error">/login.jsp</result>
+			<result name="success"  type="redirect">/home.jsp</result>
+		</action>
+		<action name="manlogin" class="njust.UserAction.ManageLogin">
+		    <result name="error" type="redirect" >/user_mana_login.jsp</result>
+			<result name="success" type="redirectAction">UserList</result>
+		</action> 
+		<action name="adduser" class="njust.UserAction.addUser">
+		    <result name="error">/message.jsp</result>
+	        <result name="success" type="redirectAction">UserList</result>
+        </action>
+        <action name="delAndModUser" class="njust.UserAction.delAndModUser">
+		    <result name="modify">/modifyUser.jsp</result>
+		    <result name="error">/message.jsp</result>
+	        <result name="delete" type="redirectAction">UserList</result>
+        </action>
+        <action name="manlogout" class="njust.UserAction.LogoutAction">
+	        <result name="success" type="redirect" >/user_mana_login.jsp</result>
+        </action>
+         <action name="userlogout" class="njust.UserAction.LogoutAction">
+	        <result name="success" type="redirect" >/login.jsp</result>
+        </action>
+        <action name="upsword" class="njust.UserAction.UPsword">
+	        <result name="success" type="redirectAction">UserList</result>
+        </action>
+        <action name="mpsword" class="njust.UserAction.MPsword">
+	        <result name="success" type="redirectAction">UserList</result>
+        </action>
+	</package>
+
+</struts>    

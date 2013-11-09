@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Login and Registration Form with Html5 and Css3</title>
+	<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="css/form5.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	
+	
+</head>
+<body>
+	<div class="container">
+		
+		<div id="container_demo">
+			<a class="hiddenanchor" id="toregister"></a>
+			<a class="hiddenanchor" id="tologin"></a>
+			<div id="wrapper">
+				<div id="login" class="form animate">
+					<form action="#" method="get" autocomplete="on">
+						<h1><span>Log in</span></h1>
+						<div>
+							<label for="username" class="uname" data-icon="u">Your email or username</label>
+							<input type="text" id="username" required="required" placeholder="myusename or mymail@mail.com"/>
+						</div>
+						<div>
+							<label for="password" class="youpasswd" data-icon="p">Your password</label>
+							<input type="password" name="password" required="required" placeholder="eg. X8df!90E0" id="password" />
+						</div>			
+							
+						<div class="login button">
+							<input type="submit" value="Login" class="btn" />
+						</div> 
+						<div class="change_link">
+							Not a member yet ? <a href="#toregister"  class="to_register">Join us</a>
+						</div>
+					</form>
+				</div>
+				<!-- end Login Form -->
+				
+				<div id="register" class="form animate">
+					<form action="#" method="get" autocomplete="on">
+						<h1><span>Sign up</span></h1>
+						<div>
+							<label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+							<input type="text" name="usernamesignup" placeholder="mysuperusername690" required="required"  id="usernamesignup" />
+						</div>		
+						<div>
+							<label for="emailsignup" class="youmail" data-icon="e">Your email</label>
+							<input type="email" name="emailsignup" required="required" placeholder="mysupermail@mail.com" id="emailsignup" />
+						</div>
+						<div>
+							<label for="passwordsignup" class="youpasswd" data-icon="p">Your password</label>
+							<input type="password" name="passwordsignup" required="required" placeholder="eg.X8df!90e0" id="passwordsignup" />
+						</div>	
+						<div>
+							<label for="passwordsignup_confirm" data-icon="p" class="youpasswd">Please confirm your password</label>
+							<input type="password" name="passwordsignup_confirm" required="required" placeholder="eg.X8df!90e0" id="passwordsignup_confirm" />
+						</div>	
+						<div class="signin button">
+							<input type="submit" value="Sign up" />
+						</div>	 	
+						<div class="change_link">
+							Already a member ? <a href="#tologin" class="to_register">Go and log in</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
