@@ -6,7 +6,7 @@
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name></display-name>	
   <welcome-file-list>
-    <welcome-file>home.jsp</welcome-file>
+    <welcome-file>home.html</welcome-file>
   </welcome-file-list>
   <filter>
   	<filter-name>struts2</filter-name>
@@ -25,7 +25,7 @@
 	       <param-name>encoding</param-name>
 	       <param-value>GBK</param-value>
 	   </init-param>
-	</filter>	
+	</filter>	 
 	<filter-mapping>
 	   <filter-name>character</filter-name>
 	   <url-pattern>/*</url-pattern>
@@ -36,9 +36,31 @@
     <servlet-name>FileLoadServelt</servlet-name>
     <servlet-class>njust.upload.FileLoadServelt</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FileLoad__</servlet-name>
+    <servlet-class>njust.upload.FileLoad__</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Post</servlet-name>
+    <servlet-class>njust.upload.Post</servlet-class>
+  </servlet>
+
+
 
   <servlet-mapping>
     <servlet-name>FileLoadServelt</servlet-name>
     <url-pattern>/e_doc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileLoad__</servlet-name>
+    <url-pattern>/FileLoad__</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Post</servlet-name>
+    <url-pattern>/Post.do</url-pattern>
   </servlet-mapping>
 </web-app>
