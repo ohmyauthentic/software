@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 	<head>
@@ -548,4 +549,558 @@
 	});
 </script>
 	</body>
+=======
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap 101 Template</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+		<link href="css/index.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+	
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+		<style>
+.universal_background {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+#editor {
+	overflow: scroll;
+	max-height: 300px
+}
+
+.headtitle {
+	font-weight: bold;
+	font-size: 18px;
+	color: #e2e2e2;
+}
+
+.headtitle:hover {
+	color: #ffffff;
+}
+
+.disabled {
+	disabled: disabled
+}
+</style>
+	</head>
+	<body
+		style="background: #563d7c; background: url('seamless_polygon.jpg') repeat fixed center top #DFDFDF;">
+		<nav class="navbar navbar-default " role="navigation"
+			style="background: #563d7c">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header col-md-offset-2">
+				<a class="navbar-brand" href="#"> <span
+					class="glyphicon glyphicon-leaf"> </span> <span
+					style="color: #E6DBC4; font-size: 24px;">Njust</span><span
+					style="color: #e2e2e2; font-size: 24px;">资料平台</span> </a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse col-md-offset-5"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav "
+					style="font-weight: bold; font-size: 18px; color: #0">
+					<li>
+						<a href="home.html"><span class="headtitle ">首页</span> </a>
+					</li>
+					<li>
+						<a href="sort.html"><span class="headtitle">分类</span> </a>
+					</li>
+					<li>
+						<a href="post.html"><span class="headtitle">发布</span> </a>
+					</li>
+
+
+					<li class="col-sm-4">
+						<form class="navbar-form navbar-left" role="search">
+							<div class="form-group ">
+								<div class="input-group ">
+									<input type="text" class="form-control input-sm"
+										style="background: #e2e2e2; border: 0px; margin-top: 2px;"
+										placeholder="搜索">
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-link"
+											style="border: 0px; margin-top: 2px;">
+											<span class="glyphicon glyphicon-search"></span>
+										</button> </span>
+								</div>
+							</div>
+						</form>
+					</li>
+					<li id="user_logined" style="display: none; width: 150px;">
+
+						<a href="#" style="float: left;"> <span class="headtitle"><%=name
+								%></span> </a>
+						<a href="#" style="float: left;"> <span class="headtitle">退出</span>
+						</a>
+					</li>
+					<li id="user_login_register" style="width: 150px;">
+
+						<a href="#" style="float: left;"> <span class="headtitle">登录</span>
+						</a>
+						<a href="#" style="float: left;"> <span class="headtitle">注册</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</nav>
+
+		<!--下面添加内容-->
+
+		<div class=" container universal_background"
+			style="width: 980px; min-height: 800px;">
+
+			<div class="page-header">
+				<h1 style="text-align: center">
+					<span style="color: #563d7c">发布资源帖</span>
+				</h1>
+			</div>
+
+
+			<form class="form-horizontal" role="form" id="mainform" action="Post.do" method="post">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">
+						<span
+							style="font-weight: lighter; font-size: 18px; color: #434343">文件名12</span>
+					</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="topic_name" name="topic_name"
+							placeholder="请规范描述">
+					</div>
+				</div>
+
+				<div class="form-group" id="second">
+					<label class="col-sm-2 control-label">
+						<span
+							style="font-weight: lighter; font-size: 18px; color: #434343">类型</span>
+					</label>
+					<div class="col-sm-3">
+						<select class="form-control" id="type" name="type">
+							<option>
+								--请选择--
+							</option>
+							<option value="课件">
+								课件
+							</option>
+							<option value="电子书">
+								电子书
+							</option>
+							<option value="试卷">
+								试卷
+							</option>
+							<option value="课程设计">
+								课程设计
+							</option>
+							<option value="论文报告">
+								论文报告
+							</option>
+							<option value="电子教程">
+								电子教程
+							</option>
+						</select>
+					</div>
+				</div>
+
+
+
+				<div class="fileinput fileinput-new form-group"
+					data-provides="fileinput"  id="filefiled">
+					<label class="col-sm-2 control-label">
+						<span
+							style="font-weight: lighter; font-size: 18px; color: #434343">上传文件</span>
+					</label>
+					<div class="input-group col-sm-4" >
+						<div class="form-control uneditable-input span3"
+							data-trigger="fileinput">
+							<i class="glyphicon glyphicon-file fileinput-exists"></i>
+							<span class="fileinput-filename"></span>
+						</div>
+						<span class="input-group-addon btn btn-default btn-file" ><span
+							class="fileinput-new" >选择文件</span><span
+							class="fileinput-exists">更改</span> <input type="file"
+								name="..."  id="uploadfile"> </span>
+						<a href="#"
+							class="inp ut-group-addon btn btn-default fileinput-exists"
+							data-dismiss="fileinput" id="fileuploadajax">上传</a>
+					</div>
+				</div>
+				<div class="form-group" id="picturefiled">
+					<label class="col-sm-2 control-label">
+						<span
+							style="font-weight: lighter; font-size: 18px; color: #434343">上传图片</span>
+					</label>
+					<div class="col-sm-3">
+						<div class="fileinput fileinput-new" data-provides="fileinput">
+							<div class="fileinput-new thumbnail"
+								style="width: 200px; height: 150px;">
+								<img data-src="holder.js/100%x100%" alt="...">
+							</div>
+							<div class="fileinput-preview fileinput-exists thumbnail"
+								style="max-width: 200px; max-height: 150px;"></div>
+							<div>
+								<span class="btn btn-default btn-file"><span
+									class="fileinput-new">Select image</span><span
+									class="fileinput-exists">Change</span>
+								<input type="file" name="..." id="picture">
+								</span>
+								<a href="#" class="btn btn-default fileinput-exists"
+									data-dismiss="fileinput" id="pictureup">上传</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+
+
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">
+						<span
+							style="font-weight: lighter; font-size: 18px; color: #434343">详细描述</span>
+					</label>
+					<br />
+					
+					
+                       <input type="hidden" name="content" id="hide"/>
+
+
+					<div class="hero-unit col-sm-8">
+						<div class="btn-toolbar" data-role="editor-toolbar"
+							data-target="#editor">
+							<div class="btn-group">
+								<a class="btn dropdown-toggle " data-toggle="dropdown" title=""
+									data-original-title="Font"><i class="icon-font"></i><b
+									class="caret"></b> </a>
+								<ul class="dropdown-menu">
+									<li>
+										<a data-edit="fontName Serif" style="font-family: &amp; amp;">Serif</a>
+									</li>
+									<li>
+										<a data-edit="fontName Sans" style="font-family: &amp; amp;">Sans</a>
+									</li>
+									<li>
+										<a data-edit="fontName Arial" style="font-family: &amp; amp;">Arial</a>
+									</li>
+									<li>
+										<a data-edit="fontName Arial Black"
+											style="font-family: &amp; amp;">Arial Black</a>
+									</li>
+									<li>
+										<a data-edit="fontName Courier"
+											style="font-family: &amp; amp;">Courier</a>
+									</li>
+									<li>
+										<a data-edit="fontName Courier New"
+											style="font-family: &amp; amp;">Courier New</a>
+									</li>
+									<li>
+										<a data-edit="fontName Comic Sans MS"
+											style="font-family: &amp; amp;">Comic Sans MS</a>
+									</li>
+									<li>
+										<a data-edit="fontName Helvetica"
+											style="font-family: &amp; amp;">Helvetica</a>
+									</li>
+									<li>
+										<a data-edit="fontName Impact" style="font-family: &amp; amp;">Impact</a>
+									</li>
+									<li>
+										<a data-edit="fontName Lucida Grande"
+											style="font-family: &amp; amp;">Lucida Grande</a>
+									</li>
+									<li>
+										<a data-edit="fontName Lucida Sans"
+											style="font-family: &amp; amp;">Lucida Sans</a>
+									</li>
+									<li>
+										<a data-edit="fontName Tahoma" style="font-family: &amp; amp;">Tahoma</a>
+									</li>
+									<li>
+										<a data-edit="fontName Times" style="font-family: &amp; amp;">Times</a>
+									</li>
+									<li>
+										<a data-edit="fontName Times New Roman"
+											style="font-family: &amp; amp;">Times New Roman</a>
+									</li>
+									<li>
+										<a data-edit="fontName Verdana"
+											style="font-family: &amp; amp;">Verdana</a>
+									</li>
+								</ul>
+							</div>
+							<div class="btn-group">
+								<a class="btn dropdown-toggle " data-toggle="dropdown" title=""
+									data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b
+									class="caret"></b> </a>
+								<ul class="dropdown-menu">
+									<li>
+										<a data-edit="fontSize 5"><font size="5">Huge</font> </a>
+									</li>
+									<li>
+										<a data-edit="fontSize 3"><font size="3">Normal</font> </a>
+									</li>
+									<li>
+										<a data-edit="fontSize 1"><font size="1">Small</font> </a>
+									</li>
+								</ul>
+							</div>
+							<div class="btn-group">
+								<a class="btn " data-edit="bold" title=""
+									data-original-title="Bold (Ctrl/Cmd+B)"><i
+									class="icon-bold"></i> </a>
+								<a class="btn " data-edit="italic" title=""
+									data-original-title="Italic (Ctrl/Cmd+I)"><i
+									class="icon-italic"></i> </a>
+								<a class="btn " data-edit="strikethrough" title=""
+									data-original-title="Strikethrough"><i
+									class="icon-strikethrough"></i> </a>
+								<a class="btn " data-edit="underline" title=""
+									data-original-title="Underline (Ctrl/Cmd+U)"><i
+									class="icon-underline"></i> </a>
+							</div>
+							<div class="btn-group">
+								<a class="btn " data-edit="insertunorderedlist" title=""
+									data-original-title="Bullet list"><i class="icon-list-ul"></i>
+								</a>
+								<a class="btn " data-edit="insertorderedlist" title=""
+									data-original-title="Number list"><i class="icon-list-ol"></i>
+								</a>
+								<a class="btn " data-edit="outdent" title=""
+									data-original-title="Reduce indent (Shift+Tab)"><i
+									class="icon-indent-left"></i> </a>
+								<a class="btn " data-edit="indent" title=""
+									data-original-title="Indent (Tab)"><i
+									class="icon-indent-right"></i> </a>
+							</div>
+							<div class="btn-group">
+								<a class="btn btn-info " data-edit="justifyleft" title=""
+									data-original-title="Align Left (Ctrl/Cmd+L)"><i
+									class="icon-align-left"></i> </a>
+								<a class="btn " data-edit="justifycenter" title=""
+									data-original-title="Center (Ctrl/Cmd+E)"><i
+									class="icon-align-center"></i> </a>
+								<a class="btn " data-edit="justifyright" title=""
+									data-original-title="Align Right (Ctrl/Cmd+R)"><i
+									class="icon-align-right"></i> </a>
+								<a class="btn " data-edit="justifyfull" title=""
+									data-original-title="Justify (Ctrl/Cmd+J)"><i
+									class="icon-align-justify"></i> </a>
+							</div>
+							<div class="btn-group">
+								<a class="btn dropdown-toggle " data-toggle="dropdown" title=""
+									data-original-title="Hyperlink"><i class="icon-link"></i> </a>
+								<div class="dropdown-menu input-append">
+									<input class="span2" placeholder="URL" type="text"
+										data-edit="createLink">
+									<button class="btn" type="button">
+										Add
+									</button>
+								</div>
+								<a class="btn " data-edit="unlink" title=""
+									data-original-title="Remove Hyperlink"><i class="icon-cut"></i>
+								</a>
+
+							</div>
+
+
+							<div class="btn-group">
+								<a class="btn " data-edit="undo" title=""
+									data-original-title="Undo (Ctrl/Cmd+Z)"><i
+									class="icon-undo"></i> </a>
+								<a class="btn " data-edit="redo" title=""
+									data-original-title="Redo (Ctrl/Cmd+Y)"><i
+									class="icon-repeat"></i> </a>
+							</div>
+						</div>
+
+						<div id="editor" contenteditable="true">
+
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">
+						<span
+							style="font-weight: lighter; font-size: 18px; color: #434343">关键字</span>
+					</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="inputEmail3" name="inputEmail3"
+							placeholder="选填。多个关键词间使用逗号间隔。">
+					</div>
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label"></label>
+					<div class="col-sm-2">
+						<button class="btn btn-block btn-primary"
+							id="submitform" type="button">提交</button>
+					</div>
+				</div>
+		</div>
+		</form>
+		</div>
+
+
+		<div title="Back to Top" id="back-top" style="display: none;"#" ></div>
+
+		<footer class=" container" style="width: 980px;">
+			<p>
+				&copy; 2013 Company, Inc. &middot;
+				<a href="#">Privacy</a> &middot;
+				<a href="#">NJust软件项目管理</a>
+			</p>
+		</footer>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+		<script src="js/jquery.min.js"></script>	
+		
+		<script>
+		$("#submitform").click(function(){
+		$("#hide").val($("#editor").html());	
+		$("#mainform").submit();
+		});
+		
+		</script>
+	   <script type="text/javascript" src="js/jquery.js"></script>
+	   <script type="text/javascript" src="js/ajaxfileupload.js"></script>
+		<script>	
+			
+		$("#fileuploadajax").click(function(){
+				if($("#uploadfile").val()==""){
+				alert("上传文件不能为空!");
+				return false;
+			}
+		   $.ajaxFileUpload({
+					url:"http://localhost:8080/e_doc/FileLoad__",
+					secureuri:false,
+					fileElementId:'uploadfile',
+					dataType: 'text/xml',			
+					success: function (data) {											
+					},error: function (data, status, e){
+						alert("fail");
+					}
+				}
+			);			 			
+	
+	       $("#filefiled").remove();
+	       $("#second").after("<div class='form-group' id='disfile'>	<label class='col-sm-2 control-label'><span	style='font-weight: lighter; font-size: 18px; color: #434343'>上传文件</span>	</label>			<div class='col-sm-3'>	<input class='form-control'	placeholder='上传成功' disabled></div></div>");				
+		});
+		
+		$("#pictureup").click(function(){
+				if($("#picture").val()==""){
+				alert("上传文件不能为空!");
+				return false;
+			}
+		   $.ajaxFileUpload({
+					url:"http://localhost:8080/e_doc/e_doc",
+					secureuri:false,
+					fileElementId:'picture',
+					dataType: 'text/xml',			
+					success: function (data) {											
+					},error: function (data, status, e){
+						alert("fail");
+					}
+				}
+			);			 			
+	
+	       $("#picturefiled").remove();
+	       $("#disfile").after("<div class='form-group'>	<label class='col-sm-2 control-label'><span	style='font-weight: lighter; font-size: 18px; color: #434343'>上传图片</span>	</label>			<div class='col-sm-3'>	<input class='form-control'	placeholder='上传成功' disabled></div></div>");				
+		}
+		
+		
+		
+		);
+		
+		</script>
+		
+		
+			<script src="js/jquery.hotkeys.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-wysiwyg.js"></script>
+		
+	<script>	
+	$(function() {
+		function initToolbarBootstrapBindings() {
+			var fonts = [ 'Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
+					'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact',
+					'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+					'Times New Roman', 'Verdana' ], fontTarget = $(
+					'[title=Font]').siblings('.dropdown-menu');
+			$
+					.each(
+							fonts,
+							function(idx, fontName) {
+								fontTarget
+										.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'
+												+ fontName + '</a></li>'));
+							});
+			$('a[title]').tooltip({
+				container : 'body'
+			});
+			$('.dropdown-menu input').click(function() {
+				return false;
+			}).change(
+					function() {
+						$(this).parent('.dropdown-menu').siblings(
+								'.dropdown-toggle').dropdown('toggle');
+					}).keydown('esc', function() {
+				this.value = '';
+				$(this).change();
+			});
+
+			$('[data-role=magic-overlay]').each(
+					function() {
+						var overlay = $(this), target = $(overlay
+								.data('target'));
+						overlay.css('opacity', 0).css('position', 'absolute')
+								.offset(target.offset()).width(
+										target.outerWidth()).height(
+										target.outerHeight());
+					});
+			$('#voiceBtn').hide();
+			// if ("onwebkitspeechchange"  in document.createElement("input")) {
+			//   var editorOffset = $('#editor').offset();
+			//   $('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+$('#editor').innerWidth()-35});
+			// } else {
+			//   $('#voiceBtn').hide();
+			// }
+		}
+		;
+		initToolbarBootstrapBindings();
+		$('#editor').wysiwyg();
+		window.prettyPrint && prettyPrint();
+	});
+	$(document).ready(function() {
+		$("#radio_file").click(function() {
+			$("#upload_url").val("");
+			$("#upload_file").attr("disabled", false);
+			$("#upload_url").attr("disabled", "disabled");
+		});
+		$("#radio_url").click(function() {
+			$("#upload_file").val("");
+			$("#upload_file").attr("disabled", "disabled");
+			$("#upload_url").attr("disabled", false);
+		});
+
+	});
+</script>
+	</body>
+>>>>>>> b6a0d10291a284152b2d5240e929dcf8228143c5
 </html>

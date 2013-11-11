@@ -4,8 +4,6 @@ import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
@@ -13,18 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
-public class FileLoadServelt extends HttpServlet {
-
-	/**
-	 * 
-	 */
+public class FileLoad__ extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * Constructor of the object.
 	 */
-	public FileLoadServelt() {
+	public FileLoad__() {
 		super();
 	}
 
@@ -48,7 +40,6 @@ public class FileLoadServelt extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		doPost(request, response);
 	}
 
@@ -64,6 +55,10 @@ public class FileLoadServelt extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+	/*	
+		*/
+			
 		HttpSession session=request.getSession();
 		// �ϴ�֮����ļ�����������ļ�����
 		String filepath = this.getServletContext().getRealPath("")+java.io.File.separator+"picture"+java.io.File.separator;
@@ -81,7 +76,7 @@ public class FileLoadServelt extends HttpServlet {
 		    filename = System.currentTimeMillis()+type;  //�ļ����
 		    DataOutputStream fileStream = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filepath+ filename)));
 		  
-		   session.setAttribute("pic_url", filepath + filename);
+		   session.setAttribute("file_url", filepath + filename);
 		    
 		    len = in.readLine(buf, 0, buf.length); 
 		    len = in.readLine(buf, 0, buf.length); 

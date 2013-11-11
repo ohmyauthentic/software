@@ -14,19 +14,19 @@
             <column name="username" length="20" />
         </many-to-one>
         <property name="publishTime" type="java.sql.Timestamp">
-            <column name="publish_time" length="19" />
+            <column name="publish_time" length="50" />
         </property>
         <property name="topicName" type="java.lang.String">
             <column name="topic_name" length="30" />
         </property>
         <property name="topicUrl" type="java.lang.String">
-            <column name="topic_url" length="50" />
+            <column name="topic_url" length="100" />
         </property>
         <property name="wordDescription" type="java.lang.String">
             <column name="word_description" />
         </property>
-        <property name="like" type="java.lang.Integer">
-            <column name="like" />
+        <property name="love" type="java.lang.Integer">
+            <column name="love" />
         </property>
         <property name="downloadNum" type="java.lang.Integer">
             <column name="download_num" />
