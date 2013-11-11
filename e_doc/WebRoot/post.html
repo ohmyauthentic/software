@@ -118,7 +118,7 @@
 			</div>
 
 
-			<form class="form-horizontal" role="form" id="mainform">
+			<form class="form-horizontal" role="form" id="mainform" action="home.html">
 				<div class="form-group">
 					<label class="col-sm-2 control-label">
 						<span
@@ -393,8 +393,8 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label"></label>
 					<div class="col-sm-2">
-						<input class="btn btn-block btn-primary"
-							id="submit" value="提交">
+						<button class="btn btn-block btn-primary"
+							id="submitform" type="button">提交</button>
 					</div>
 				</div>
 		</div>
@@ -416,13 +416,17 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 
 		<script src="js/jquery.min.js"></script>	
+		
+		<script>
+		$("#submitform").click(function(){
+		$("#hide").val($("#editor").html());	
+		$("#mainform").submit();
+		});
+		
+		</script>
 	   <script type="text/javascript" src="js/jquery.js"></script>
 	   <script type="text/javascript" src="js/ajaxfileupload.js"></script>
-		<script>
-		$("#submit").click(function(){
-		$("#hide").val($("#editor").html());	
-		$("#mainform").submit();		
-		});
+		<script>	
 			
 		$("#fileuploadajax").click(function(){
 				if($("#uploadfile").val()==""){
